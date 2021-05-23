@@ -1,15 +1,16 @@
-##-------------------------------------------------------------------------------------------------##
+##=================================================================================================##
 ##                                HR Attrition Dataset (From DS360)                                ##
-##-------------------------------------------------------------------------------------------------##
+##=================================================================================================##
 
 setwd("D:/Projects/HR-Attrition")
 
-library(reshape2)
-library(ggplot2)
-library(dplyr)
-
 hr <- read.csv("HR_dataset.csv", stringsAsFactors = T) %>% 
   mutate(status = as.factor(ifelse(left == 1, "Left", "Stayed")))
+
+
+##-------------------------------------------------------------------------------------------------##
+##                                    Exploratory Data Analysis                                    ##
+##-------------------------------------------------------------------------------------------------##
 
 dim(hr)
 head(hr)
@@ -21,6 +22,10 @@ which(is.na(hr))
 data.frame(Numeric = sapply(hr, is.numeric))
 data.frame(Role = unique(hr$role))
 data.frame(Salary = unique(hr$salary))
+
+library(reshape2)
+library(ggplot2)
+library(dplyr)
 
 
 ##-------------------------------------------------------------------------------------------------##
@@ -99,4 +104,36 @@ ggplot(hr, aes(x = salary, y = satisfaction_level, fill = status)) +
   geom_violin(position = position_dodge(width = 0.4)) + 
   geom_boxplot(position = position_dodge(width = 0.4), width = 0.1) +
   scale_fill_hue()
+
+
+##-------------------------------------------------------------------------------------------------##
+##                                       Predictive Analysis                                       ##
+##-------------------------------------------------------------------------------------------------##
+
+library(caret)
+
+set.seed(111)
+split_numdata <- createDataPartition(numdata$left, times = 1, p = 0.75, list = FALSE)
+
+
+##-------------------------------------------------------------------------------------------------##
+## Logistic Regression
+
+train <- numhr[ split_numdata,]
+test <- numhr[-split_numdata,]
+
+model <- glm (left ~ ., data = train, family = binomial)
+summary(model)
+
+predict <- predict(model, newdata = test, type = 'response')
+predict[predict >= 0.5] = 1
+predict[predict < 0.5] = 0
+
+test$left <- as.factor(test$left)
+predict <- as.factor(predict)
+confusionMatrix(test$left, predict)
+
+
+
+
 
