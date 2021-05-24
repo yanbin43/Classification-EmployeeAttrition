@@ -1,8 +1,8 @@
 # HR Attrition
-High turn-over rate of employees brings about additional costs to an organization. Therefore, 
-The purpose of the project is: -
-1. to understand the pattern of attrition with descriptive analysis on historical data;
-1. to do predictive analysis on employee's attrition.
+High turn-over rate of employees brings about additional costs to an organization.
+Therefore, the project aims to: -
+1. understand the pattern of attrition with descriptive analysis on historical data;
+1. do a predictive analysis on employee's attrition.
 
 ### About the dataset
 Source: [@thelead.io](https://github.com/theleadio/datascience_demo/blob/master/HR_dataset.csv)
