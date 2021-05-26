@@ -65,7 +65,7 @@ ggplot(hr, aes(as.factor(number_project), fill = status)) +
 
 
 ##-------------------------------------------------------------------------------------------------##
-## Freq Plor (all categorical features)
+## Freq Plot (all categorical features)
 
 # role, salary, status
 ggplot(hr, aes(role)) + geom_bar()
