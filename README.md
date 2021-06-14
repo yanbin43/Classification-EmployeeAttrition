@@ -14,8 +14,9 @@ Source: [@thelead.io](https://github.com/theleadio/datascience_demo/blob/master/
 
 ### Progress & Plans
 1. Descriptive Analysis
-    * Framework of types of charts are ready.
-    * An RShiny Dashboard will be created.
+   -  [x] Framework
+   -  [ ] RShiny Dashboard
 1. Predictive Analysis
-    * Currently, a basic logistic regression model is done using only numeric features.
-    * More models will be added as comparison.
+   -  [x] Logistic Regression
+   -  [ ] Random Forest
+   -  [ ] Others
