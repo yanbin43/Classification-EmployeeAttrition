@@ -2,8 +2,6 @@
 ##                                HR Attrition Dataset (From DS360)                                ##
 ##=================================================================================================##
 
-setwd("D:/Projects/HR-Attrition")
-
 hr <- read.csv("HR_dataset.csv", stringsAsFactors = T) %>% 
   mutate(status = as.factor(ifelse(left == 1, "Left", "Stayed")))
 
