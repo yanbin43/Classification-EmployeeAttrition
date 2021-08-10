@@ -22,11 +22,5 @@ Source: [@thelead.io](https://github.com/theleadio/datascience_demo/blob/master/
 * RStudio Version 1.4.1106
 * R Packages: reshape2, ggplot2, dplyr, caret
 
-## Progress & Plans
-1. Descriptive Analysis
-   -  [x] Framework
-   -  [ ] RShiny Dashboard
-1. Predictive Analysis
-   -  [x] Logistic Regression
-   -  [ ] Random Forest
-   -  [ ] Others
+## Dashboard  
+A dashboard for the dataset is done with google data studio [HERE](https://datastudio.google.com/reporting/96acc824-37ad-41d4-93ff-b9a228461645).
