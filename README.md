@@ -1,4 +1,4 @@
-# HR Attrition
+# Employee Attrition
 High turn-over rate of employees brings about additional costs to an organization. This project aims to understand the pattern of attrition with descriptive analysis on historical data and do a predictive modelling on employees' attrition.
 
 ## About the dataset
